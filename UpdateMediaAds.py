@@ -12,14 +12,13 @@ ADS_CONFIG = []
 
 # To set ads use this
 # ADS_CONFIG = [
-#     {'url': 'https://1188lv.adocean.pl/ad.xml?id=2wsMiSef7V.pZ8R4M5D2yzr8E2bzbPJacDe5VWHFlB3.e7', 'type': 'PRE',
+#     {'url': 'https://vast.domain.com/ad.xml', 'type': 'PRE',
 #      'adsType': 'VAST'},
-#     {'url': 'https://1188lv.adocean.pl/ad.xml?id=2wsMiSef7V.pZ8R4M5D2yzr8E2bzbPJacDe5VWHFlB3.e7', 'type': 'MID',
+#     {'url': 'https://vast.domain.com/ad.xml', 'type': 'MID',
 #      'offset': '50%', 'adsType': 'VAST'},
-#     {'url': 'https://1188lv.adocean.pl/ad.xml?id=2wsMiSef7V.pZ8R4M5D2yzr8E2bzbPJacDe5VWHFlB3.e7', 'type': 'POST',
+#     {'url': 'https://vast.domain.com/ad.xml', 'type': 'POST',
 #      'adsType': 'VAST'}
 # ]
-
 
 if __name__ == '__main__':
     offset = 0
