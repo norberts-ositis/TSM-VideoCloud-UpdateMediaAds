@@ -2,6 +2,7 @@
 import tsmapi_v4
 from tsmapi_v4_config import *
 import time
+import json
 
 
 def list_media(offset=0, limit=1,
@@ -40,10 +41,20 @@ def list_media(offset=0, limit=1,
     data['options']['only_available'] = only_available
 
     request = tsmapi_v4.TSMAPI(TSMAPI_URL, TSMAPI_KEY, TSMAPI_SECRET, int(time.time()))
-    return request.send_post(data)
+    response = request.send_post(data)
+    response_text_json = json.loads(response.text)
+    if response.status_code == 200 and response_text_json['data']:
+        return response_text_json['data']
+    else:
+        return None
 
 
 def update_media_ads(system_id, ads):
     data = {'object': 'media', 'action': 'update', 'parameters': {'system_id': system_id, 'ads': ads}}
     request = tsmapi_v4.TSMAPI(TSMAPI_URL, TSMAPI_KEY, TSMAPI_SECRET, int(time.time()))
-    return request.send_post(data)
+    response = request.send_post(data)
+    response_text_json = json.loads(response.text)
+    if response.status_code == 200:
+        return response_text_json
+    else:
+        return None
